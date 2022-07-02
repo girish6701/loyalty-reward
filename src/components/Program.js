@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Form from "./Form";
-import "./program.css";
+import "./styles/program.css";
 
 function Program() {
   const [showForm, setShowForm] = useState(false);

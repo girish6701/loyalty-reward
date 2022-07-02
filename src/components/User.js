@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 // import { onAuthStateChanged } from "firebase/auth";
 // import { signInWithEmailAndPassword, signOut } from "firebase/auth";
-import "./user.css";
+import "./styles/user.css";
 
 function Login() {
   const [userDetails, setUserDetails] = useState({
