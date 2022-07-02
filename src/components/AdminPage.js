@@ -69,7 +69,7 @@ function AdminPage() {
   return (
     <div>
       {loader ? (
-        <i class="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
+        <i className="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
       ) : (
         <div>
           <h1 className="program-heading">ALL LOYALTY PROGRAMS</h1>

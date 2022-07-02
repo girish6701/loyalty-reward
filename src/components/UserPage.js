@@ -23,13 +23,13 @@ function UserPage() {
     })();
   }, [user]);
   return (
-    <>
+    <div>
       {loader ? (
-        <i class="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
+        <i className="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
       ) : (
         <div>UserPage</div>
       )}
-    </>
+    </div>
   );
 }
 

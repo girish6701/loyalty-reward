@@ -22,14 +22,14 @@ export function AuthContextProvider({ children }) {
   let value = currentUser;
   return (
     <AuthContext.Provider value={value}>
-      <>
+      <div>
         {initialLoader ? (
-          <i class="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
+          <i className="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
         ) : (
           children
         )}
         {/* {!initialLoader && children} */}
-      </>
+      </div>
     </AuthContext.Provider>
   );
 }

@@ -17,3 +17,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.fa-spinner {
+  color: #05386b;
+  font-size: 10rem;
+  position: absolute;
+  left: calc(50% - 5rem);
+  top: calc(50% - 5rem);
+}

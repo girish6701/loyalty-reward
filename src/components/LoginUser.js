@@ -49,9 +49,9 @@ function LoginUser() {
   // }
 
   return (
-    <>
+    <div>
       {loader ? (
-        <i class="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
+        <i className="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
       ) : (
         <div className="login-cont">
           <div className="main-div">
@@ -85,7 +85,7 @@ function LoginUser() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
