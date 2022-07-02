@@ -40,14 +40,18 @@ function Form({ setShowForm, setAllPrograms, allPrograms }) {
           );
         })}
       </div>
-      <h4>Dishes for Program</h4>
+      {selectedDishes && <h4 className="data-heading">Dishes for Program</h4>}
       {selectedDishes && selectedDishes.map((d) => <p>{d}</p>)}
+      <h4 className="data-heading">No. of Visits</h4>
       <input
+      className="visits-input"
         onChange={handleChange}
         type="number"
-        placeholder="Enter the number of Visits"
+        placeholder="Number of visits"
       />
+      <br></br>
       <button
+      className="program-btn"
         onClick={() => {
           handleProgram();
         }}

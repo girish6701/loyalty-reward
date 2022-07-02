@@ -1,8 +1,10 @@
 .dish-form {
   max-width: 600px;
   background-color: coral;
-  margin: 0 auto;
+  margin: 30px auto;
   border: 2px solid black;
+  padding: 20px;
+  border-radius: 3px;
 }
 
 .dishes-cont {
@@ -11,14 +13,45 @@
   justify-content: center;
   row-gap: 4px;
   column-gap: 4px;
+  margin-top: 10px;
 }
 
 .dish-name {
   background-color: white;
   width: 180px;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   padding: 8px 0;
-  border: 1px solid violet;
+  /* border: 1px solid violet; */
   cursor: pointer;
+}
+
+/* .dish-name:hover {
+  transform: scale(1.1);
+} */
+
+.data-heading {
+  margin: 12px 0 0;
+}
+
+.program-btn {
+  padding: 10px;
+  border: none;
+  margin: 10px 0;
+  background-color: #747474;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.visits-input {
+  outline: none;
+  border-radius: 3px;
+  border: none;
+  padding: 5px;
+}
+
+button{
+  border-radius: 3px;
 }

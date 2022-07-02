@@ -70,17 +70,15 @@ function AdminPage() {
     <div>
       {loader ? (
         <i className="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
+      ) : showForm ? (
+        <Form
+          setShowForm={setShowForm}
+          setAllPrograms={setAllPrograms}
+          allPrograms={allPrograms}
+        />
       ) : (
         <div>
           <h1 className="program-heading">ALL LOYALTY PROGRAMS</h1>
-          {showForm && (
-            <Form
-              setShowForm={setShowForm}
-              setAllPrograms={setAllPrograms}
-              allPrograms={allPrograms}
-            />
-          )}
-
           <div className="main-programs-cont">
             {allPrograms &&
               allPrograms.map((program) => {
@@ -113,6 +111,8 @@ function AdminPage() {
         </div>
       )}
     </div>
+
+    // </div>
   );
 }
 
