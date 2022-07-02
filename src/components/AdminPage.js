@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Form from "./Form";
-import "./styles/program.css";
+import "./styles/adminPage.css";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { useContext } from "react";
@@ -8,6 +8,7 @@ import { AuthContext } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 import { setDoc } from "firebase/firestore";
 import { collection, onSnapshot } from "firebase/firestore";
+import ShowUsers from "./ShowUsers";
 
 function AdminPage() {
   const [showForm, setShowForm] = useState(false);
@@ -15,6 +16,7 @@ function AdminPage() {
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
   let user = useContext(AuthContext);
+
   useEffect(() => {
     (async function () {
       if (user) {
@@ -22,7 +24,6 @@ function AdminPage() {
         const docRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(docRef);
         setLoader(false);
-        // console.log(docSnap.data());
         if (!docSnap.data().isAdmin) {
           navigate("/userPage");
         }
@@ -81,9 +82,9 @@ function AdminPage() {
           <h1 className="program-heading">ALL LOYALTY PROGRAMS</h1>
           <div className="main-programs-cont">
             {allPrograms &&
-              allPrograms.map((program) => {
+              allPrograms.map((program, index) => {
                 return (
-                  <div className="program-cont">
+                  <div key={index} className="program-cont">
                     <p>
                       No. of Visits:{" "}
                       <span className="visit-text">
@@ -91,12 +92,20 @@ function AdminPage() {
                       </span>
                     </p>
                     <p>
-                      Dishes:{" "}
+                      Dishes:
                       {program.selectedDishes.map((dish, index, array) => {
                         if (index == array.length - 1) {
-                          return <span className="dish-text">{dish}</span>;
+                          return (
+                            <span key={index} className="dish-text">
+                              {dish}
+                            </span>
+                          );
                         }
-                        return <span className="dish-text">{dish}, </span>;
+                        return (
+                          <span key={index} className="dish-text">
+                            {dish},{" "}
+                          </span>
+                        );
                       })}
                     </p>
                   </div>
@@ -108,11 +117,12 @@ function AdminPage() {
               Create Program
             </button>
           </div>
+          <div className="users-div">
+            <ShowUsers />
+          </div>
         </div>
       )}
     </div>
-
-    // </div>
   );
 }
 

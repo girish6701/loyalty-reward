@@ -32,26 +32,27 @@ function Form({ setShowForm, setAllPrograms, allPrograms }) {
     <div className="dish-form">
       <h4>Select Dishes</h4>
       <div className="dishes-cont">
-        {restaurantDishes[0].dishes.map((dish) => {
+        {restaurantDishes[0].dishes.map((dish, index) => {
           return (
-            <p onClick={addDishes} className="dish-name">
+            <p key={index} onClick={addDishes} className="dish-name">
               {dish.name}
             </p>
           );
         })}
       </div>
       {selectedDishes && <h4 className="data-heading">Dishes for Program</h4>}
-      {selectedDishes && selectedDishes.map((d) => <p>{d}</p>)}
+      {selectedDishes &&
+        selectedDishes.map((dish, index) => <p key={index}>{dish}</p>)}
       <h4 className="data-heading">No. of Visits</h4>
       <input
-      className="visits-input"
+        className="visits-input"
         onChange={handleChange}
         type="number"
         placeholder="Number of visits"
       />
       <br></br>
       <button
-      className="program-btn"
+        className="program-btn"
         onClick={() => {
           handleProgram();
         }}

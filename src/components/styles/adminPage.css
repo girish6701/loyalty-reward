@@ -22,7 +22,7 @@
   width: 200px;
   background-color: #55bcc9;
   padding: 15px;
-  color: white;
+  color: whitesmoke;
   border-radius: 4px;
   transition: 0.4s;
 }
@@ -58,6 +58,7 @@
   -webkit-box-shadow: 4px 4px 14px 0px rgba(151, 202, 239, 1);
   -moz-box-shadow: 4px 4px 14px 0px rgba(151, 202, 239, 1);
   box-shadow: 4px 4px 14px 0px rgba(151, 202, 239, 1);
+  transition: 0.3s;
 }
 
 .create-btn:hover {
