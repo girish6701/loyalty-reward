@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
-// import { auth } from "../firebase";
+import { auth } from "../firebase";
 // import { Link } from "react-router-dom";
-// import { onAuthStateChanged } from "firebase/auth";
-// import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import "./styles/user.css";
 
-function Login() {
+function LoginUser() {
   const [userDetails, setUserDetails] = useState({
     email: "",
     password: "",
   });
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
   const [loader, setLoader] = useState(false);
-  const [initialLoader, setInitialLoader] = useState(true);
   const [error, setError] = useState("");
 
   function handleChange(e) {
@@ -21,21 +19,22 @@ function Login() {
 
   async function handleClick() {
     setLoader(true);
-    // await signInWithEmailAndPassword(
-    //   auth,
-    //   userDetails.email,
-    //   userDetails.password
-    // )
-    //   .then((userCredential) => {
-    //     const user = userCredential.user;
-    //     setUser(user);
-    //   })
-    //   .catch((error) => {
-    //     setError(error);
-    //     setTimeout(() => {
-    //       setError("");
-    //     }, 3000);
-    //   });
+    await signInWithEmailAndPassword(
+      auth,
+      userDetails.email,
+      userDetails.password
+    )
+      .then((userCredential) => {
+        const user = userCredential.user;
+        // console.log(user);
+        // setUser(user);
+      })
+      .catch((error) => {
+        setError(error);
+        setTimeout(() => {
+          setError("");
+        }, 3000);
+      });
 
     setUserDetails({
       email: "",
@@ -44,31 +43,15 @@ function Login() {
     setLoader(false);
   }
 
-  // useEffect(() => {
-  //   onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       setUser(user);
-  //     } else {
-  //       setUser(null);
-  //     }
-  //     setInitialLoader(false);
-  //   });
-  // }, []);
-
-  async function handleSignOut() {
-    // await signOut(auth);
-    setUser(null);
-  }
+  // async function handleSignOut() {
+  //   // await signOut(auth);
+  //   setUser(null);
+  // }
 
   return (
     <>
       {loader ? (
         <i class="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
-      ) : user ? (
-        <>
-          <button onClick={handleSignOut}>SignOut</button>
-          <h1>User is {user.uid}</h1>
-        </>
       ) : (
         <div className="login-cont">
           <div className="main-div">
@@ -90,15 +73,15 @@ function Login() {
                 Log In
               </button>
             </div>
-            <div className="main-login-cont second">
-              <p className="signup-text">Don't have an account?</p>
-              {/* <Link
+            {/* <div className="main-login-cont second"> */}
+            {/* <p className="signup-text">Don't have an account?</p> */}
+            {/* <Link
                 to="/signup"
                 style={{ textDecoration: "none", fontWeight: "bold" }}
               >
                 Sign Up
               </Link> */}
-            </div>
+            {/* </div> */}
           </div>
         </div>
       )}
@@ -106,4 +89,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginUser;

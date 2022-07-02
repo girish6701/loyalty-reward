@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
-import secret from "./secrets";
+import secret from "./secret";
 
 const app = initializeApp(secret);
 
