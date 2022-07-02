@@ -1,0 +1,61 @@
+.program-heading {
+  color: #97caef;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.main-programs-cont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+  max-width: 1050px;
+  margin: 50px auto;
+}
+
+.program-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 200px;
+  background-color: #55bcc9;
+  padding: 15px;
+  color: white;
+  border-radius: 4px;
+}
+
+.visit-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+.dish-text {
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+.btn-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.create-btn {
+  background-color: #97caef;
+  border: none;
+  padding: 16px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  -webkit-box-shadow: 4px 4px 14px 0px rgba(151, 202, 239, 1);
+  -moz-box-shadow: 4px 4px 14px 0px rgba(151, 202, 239, 1);
+  box-shadow: 4px 4px 14px 0px rgba(151, 202, 239, 1);
+}
+
+.create-btn:hover {
+  background-color: white;
+  color: #97caef;
+}

@@ -1,7 +1,12 @@
 import "./App.css";
+import Program from "./components/Program";
 
 function App() {
-  return <div>Loyalty Program</div>;
+  return (
+    <div>
+      <Program />
+    </div>
+  );
 }
 
 export default App;

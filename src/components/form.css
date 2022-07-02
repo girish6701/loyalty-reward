@@ -1,0 +1,24 @@
+.dish-form {
+  max-width: 600px;
+  background-color: coral;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+.dishes-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 4px;
+  column-gap: 4px;
+}
+
+.dish-name {
+  background-color: white;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  border: 1px solid violet;
+  cursor: pointer;
+}
