@@ -2,7 +2,6 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  /* margin-top: 40px; */
 }
 
 .visits-cont {
@@ -17,6 +16,7 @@
   background-color: #f13c20;
   color: rgb(234, 234, 234);
   padding: 15px;
+  width: 180px;
 }
 
 .display-visits {

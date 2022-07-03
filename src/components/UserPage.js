@@ -141,7 +141,7 @@ function UserPage() {
           </button>
         </div>
       ) : (
-        <div>
+        <div style={{ padding: "10px" }}>
           <h1>Username: {currentUser && currentUser.Name}</h1>
           <i
             onClick={() => {
