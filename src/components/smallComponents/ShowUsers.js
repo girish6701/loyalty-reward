@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { collection, onSnapshot, getDocs } from "firebase/firestore";
-import "./styles/showUsers.css";
+import "../styles/showUsers.css";
 
 function ShowUsers() {
   const [loading, setLoading] = useState(false);

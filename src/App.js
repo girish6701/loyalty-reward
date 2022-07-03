@@ -1,10 +1,10 @@
-import AdminPage from "./components/AdminPage";
-import LoginUser from "./components/LoginUser";
-import UserPage from "./components/UserPage";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext, AuthContextProvider } from "./components/AuthContext";
 import { useContext } from "react";
 import Signup from "./components/Signup";
+import UserPage from "./components/UserPage";
+import LoginUser from "./components/LoginUser";
+import AdminPage from "./components/AdminPage";
 
 function App() {
   return (

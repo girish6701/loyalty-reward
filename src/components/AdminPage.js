@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Form from "./Form";
+import Form from "./smallComponents/Form";
 import "./styles/adminPage.css";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
@@ -10,7 +10,7 @@ import { setDoc } from "firebase/firestore";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
 import { collection, onSnapshot } from "firebase/firestore";
-import ShowUsers from "./ShowUsers";
+import ShowUsers from "./smallComponents/ShowUsers";
 
 function AdminPage() {
   const [showForm, setShowForm] = useState(false);
@@ -74,7 +74,7 @@ function AdminPage() {
       {loader ? (
         <i className="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
       ) : showForm ? (
-        <div style={{padding: "0 10px"}}>
+        <div style={{ padding: "0 10px" }}>
           <Form
             setShowForm={setShowForm}
             setAllPrograms={setAllPrograms}

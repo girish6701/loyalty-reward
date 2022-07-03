@@ -10,7 +10,7 @@ import { setDoc } from "firebase/firestore";
 import { onSnapshot } from "firebase/firestore";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
-import LoyaltyTimeline from "./LoyaltyTimeline";
+import LoyaltyTimeline from "./smallComponents/LoyaltyTimeline";
 
 function UserPage() {
   const [selectedDishes, setSlectedDishes] = useState(null);

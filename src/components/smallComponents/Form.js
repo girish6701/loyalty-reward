@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import restaurantDishes from "../data";
-import "./styles/form.css";
+import restaurantDishes from "../../data";
+import "../styles/form.css";
 
 function Form({ setShowForm, setAllPrograms, allPrograms }) {
   const [selectedDishes, setSlectedDishes] = useState(null);

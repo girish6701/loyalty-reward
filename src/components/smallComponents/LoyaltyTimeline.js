@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../firebase";
-import "./styles/loyaltyTimeline.css";
+import { db } from "../../firebase";
+import "../styles/loyaltyTimeline.css";
 
 function LoyaltyTimeline({ visits }) {
   const [length, setLength] = useState(0);
