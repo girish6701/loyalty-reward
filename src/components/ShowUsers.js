@@ -26,7 +26,7 @@ function ShowUsers() {
       ) : (
         <div className="admin-user-div">
           <h1 className="program-heading">USERS</h1>
-          <div className="users-cont">
+          <div className="main-users-cont">
             {users &&
               users.map((user, index) => {
                 return (

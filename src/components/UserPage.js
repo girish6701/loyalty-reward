@@ -8,6 +8,8 @@ import restaurantDishes from "../data";
 import "./styles/userPage.css";
 import { setDoc } from "firebase/firestore";
 import { onSnapshot } from "firebase/firestore";
+import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
 
 function UserPage() {
   const [selectedDishes, setSlectedDishes] = useState(null);
@@ -134,6 +136,12 @@ function UserPage() {
         </div>
       ) : (
         <div>
+          <i
+            onClick={() => {
+              signOut(auth);
+            }}
+            class="fa-solid fa-power-off icon"
+          ></i>
           <div className="display-visits">
             {allVisits &&
               allVisits.map((visit, index) => {

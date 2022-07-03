@@ -7,6 +7,8 @@ import { useContext } from "react";
 import { AuthContext } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 import { setDoc } from "firebase/firestore";
+import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
 import { collection, onSnapshot } from "firebase/firestore";
 import ShowUsers from "./ShowUsers";
 
@@ -79,6 +81,12 @@ function AdminPage() {
         />
       ) : (
         <div>
+          <i
+            onClick={() => {
+              signOut(auth);
+            }}
+            class="fa-solid fa-power-off icon"
+          ></i>
           <h1 className="program-heading">ALL LOYALTY PROGRAMS</h1>
           <div className="main-programs-cont">
             {allPrograms &&
