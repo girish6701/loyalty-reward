@@ -53,6 +53,13 @@
   font-weight: bold;
   border-radius: 3px;
   cursor: pointer;
+  border: 1.5px solid transparent;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: lightskyblue;
+  border: 1.5px solid lightskyblue;
 }
 
 .main-login-cont.second {

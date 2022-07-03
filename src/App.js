@@ -6,6 +6,7 @@ import { AuthContext, AuthContextProvider } from "./components/AuthContext";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "./firebase";
 import { useContext, useEffect } from "react";
+import Signup from "./components/Signup";
 
 function App() {
   // let user = useContext(AuthContext);
@@ -45,6 +46,22 @@ function App() {
             element={
               <RedirectToFeed>
                 <LoginUser />
+              </RedirectToFeed>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <RedirectToFeed>
+                <LoginUser />
+              </RedirectToFeed>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <RedirectToFeed>
+                <Signup />
               </RedirectToFeed>
             }
           />

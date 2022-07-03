@@ -30,7 +30,7 @@ function Form({ setShowForm, setAllPrograms, allPrograms }) {
 
   return (
     <div className="dish-form">
-      <h4>Select Dishes</h4>
+      <h4>Menu</h4>
       <div className="dishes-cont">
         {restaurantDishes[0].dishes.map((dish, index) => {
           return (

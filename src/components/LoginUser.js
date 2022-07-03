@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { auth } from "../firebase";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import "./styles/loginUser.css";
 
@@ -9,7 +9,6 @@ function LoginUser() {
     email: "",
     password: "",
   });
-  // const [user, setUser] = useState(null);
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState("");
 
@@ -26,8 +25,6 @@ function LoginUser() {
     )
       .then((userCredential) => {
         const user = userCredential.user;
-        // console.log(user);
-        // setUser(user);
       })
       .catch((error) => {
         setError(error);
@@ -73,15 +70,15 @@ function LoginUser() {
                 Log In
               </button>
             </div>
-            {/* <div className="main-login-cont second"> */}
-            {/* <p className="signup-text">Don't have an account?</p> */}
-            {/* <Link
+            <div className="main-login-cont second">
+              <p className="signup-text">Don't have an account?</p>
+              <Link
                 to="/signup"
                 style={{ textDecoration: "none", fontWeight: "bold" }}
               >
                 Sign Up
-              </Link> */}
-            {/* </div> */}
+              </Link>
+            </div>
           </div>
         </div>
       )}
