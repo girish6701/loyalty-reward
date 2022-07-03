@@ -1,4 +1,3 @@
-// Original Project
 const firebaseConfig = {
   apiKey: "AIzaSyBCN4_E3IZz0wJnMNLWmQCZrN6hCq5VIEY",
   authDomain: "loyalty-program-c61d6.firebaseapp.com",
@@ -9,4 +8,3 @@ const firebaseConfig = {
 };
 
 export default firebaseConfig;
-// module.exports = firebaseConfig;
