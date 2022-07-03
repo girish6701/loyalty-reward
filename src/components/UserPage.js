@@ -10,11 +10,13 @@ import { setDoc } from "firebase/firestore";
 import { onSnapshot } from "firebase/firestore";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
+import LoyaltyTimeline from "./LoyaltyTimeline";
 
 function UserPage() {
   const [selectedDishes, setSlectedDishes] = useState(null);
   const [date, setDate] = useState("");
   const [allVisits, setAllVisits] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
   const [loader, setLoader] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
@@ -27,6 +29,7 @@ function UserPage() {
         const docRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(docRef);
         setLoader(false);
+        setCurrentUser(docSnap.data());
         if (docSnap.data().isAdmin) {
           navigate("/adminPage");
         }
@@ -35,6 +38,7 @@ function UserPage() {
   }, [user]);
 
   useEffect(() => {
+    setLoader(true);
     (async function () {
       if (allVisits) {
         const docRef = await setDoc(doc(db, "user-visits", user.uid), {
@@ -42,14 +46,16 @@ function UserPage() {
         });
       }
     })();
+    setLoader(false);
   }, [allVisits]);
 
   useEffect(() => {
+    setLoader(true);
     let pArr = [];
     const unsub = onSnapshot(doc(db, "user-visits", user.uid), (doc) => {
       setAllVisits(doc.data().allVisits);
     });
-
+    setLoader(false);
     return () => {
       unsub();
     };
@@ -136,19 +142,27 @@ function UserPage() {
         </div>
       ) : (
         <div>
+          <h1>Username: {currentUser && currentUser.Name}</h1>
           <i
             onClick={() => {
               signOut(auth);
             }}
             class="fa-solid fa-power-off icon"
           ></i>
+          <h2 style={{ marginTop: "30px", textAlign: "center" }}>All Visits</h2>
           <div className="display-visits">
+            {!allVisits && (
+              <p style={{ fontSize: "1.2rem" }}>Today is your first visit</p>
+            )}
             {allVisits &&
               allVisits.map((visit, index) => {
                 return (
                   <div key={index} className="visit-cont">
-                    <p>{index + 1}.</p>
-                    <p>{visit.date}</p>
+                    <p style={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+                      Visit {index + 1}
+                    </p>
+                    <p>Date: {visit.date}</p>
+                    <p>Order:</p>
                     {visit.selectedDishes.map((dish, index) => (
                       <p key={index}>{dish}</p>
                     ))}
@@ -156,7 +170,25 @@ function UserPage() {
                 );
               })}
           </div>
-          <button onClick={() => setShowForm(!showForm)}>Add Visits</button>
+          <div className="loyalty-cont">
+            <h2
+              style={{
+                textAlign: "center",
+                marginTop: "20px",
+              }}
+            >
+              LOYALTY TIMELINE
+            </h2>
+            <LoyaltyTimeline visits={allVisits} />
+          </div>
+          <div className="btn-div">
+            <button
+              className="add-visit-btn"
+              onClick={() => setShowForm(!showForm)}
+            >
+              Add Visits
+            </button>
+          </div>
         </div>
       )}
     </div>

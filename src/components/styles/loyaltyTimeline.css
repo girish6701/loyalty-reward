@@ -1,0 +1,23 @@
+.loyalty-main-cont {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.next-dish {
+  font-weight: bold;
+}
+
+.next-loyalty {
+  background-color: #ffd700;
+  color: rgb(234, 234, 234);
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.visit-loyalty-cont {
+  background-color: #4056a1;
+  text-align: center;
+  padding: 10px;
+  color: rgb(234, 234, 234);
+  margin: 10px 0;
+}

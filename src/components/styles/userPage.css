@@ -14,7 +14,9 @@
 
 .visit-cont {
   background-color: cadetblue;
-  padding: 10px;
+  background-color: #f13c20;
+  color: rgb(234, 234, 234);
+  padding: 15px;
 }
 
 .display-visits {
@@ -22,7 +24,8 @@
   column-gap: 20px;
   row-gap: 20px;
   flex-wrap: wrap;
-  margin-top: 60px;
+  margin-top: 10px;
+  justify-content: center;
 }
 
 .icon {
@@ -31,4 +34,27 @@
   top: 12px;
   font-size: 1.75rem;
   cursor: pointer;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.add-visit-btn {
+  border: 1.5px solid transparent;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background-color: lightskyblue;
+  color: white;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.add-visit-btn:hover {
+  background-color: white;
+  color: lightskyblue;
+  border: 1.5px solid lightskyblue;
 }
