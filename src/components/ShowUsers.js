@@ -22,7 +22,7 @@ function ShowUsers() {
   return (
     <div>
       {loading ? (
-        <h1>LOAD</h1>
+        <i className="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
       ) : (
         <div className="admin-user-div">
           <h1 className="program-heading">USERS</h1>

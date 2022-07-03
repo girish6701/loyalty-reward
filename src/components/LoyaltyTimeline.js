@@ -69,7 +69,8 @@ function LoyaltyTimeline({ visits }) {
                 fontSize: "1.1rem",
               }}
             >
-              For your next visit, you will get a free dish from the following list:
+              For your next visit, you will get a free dish from the following
+              list:
               {program.selectedDishes.map((dish, index, arr) => {
                 if (arr.length - 1 == index) {
                   return <span className="next-dish">{dish}</span>;
@@ -88,7 +89,7 @@ function LoyaltyTimeline({ visits }) {
   return (
     <div>
       {loader ? (
-        <h1>LOADING.....</h1>
+        <i className="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
       ) : (
         <div className="loyalty-main-cont">{allPrograms && arr}</div>
       )}

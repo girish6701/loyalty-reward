@@ -5,7 +5,6 @@ import "./styles/form.css";
 function Form({ setShowForm, setAllPrograms, allPrograms }) {
   const [selectedDishes, setSlectedDishes] = useState(null);
   const [numberOfVisits, setNumberOfVisits] = useState();
-  // const [allProgram, setAllPrograms] = useState(null);
 
   function addDishes(e) {
     if (selectedDishes) {
