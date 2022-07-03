@@ -74,11 +74,13 @@ function AdminPage() {
       {loader ? (
         <i className="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
       ) : showForm ? (
-        <Form
-          setShowForm={setShowForm}
-          setAllPrograms={setAllPrograms}
-          allPrograms={allPrograms}
-        />
+        <div style={{padding: "0 10px"}}>
+          <Form
+            setShowForm={setShowForm}
+            setAllPrograms={setAllPrograms}
+            allPrograms={allPrograms}
+          />
+        </div>
       ) : (
         <div style={{ padding: "0 10px 0 10px" }}>
           <i
