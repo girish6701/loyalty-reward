@@ -80,7 +80,7 @@ function AdminPage() {
           allPrograms={allPrograms}
         />
       ) : (
-        <div>
+        <div style={{ padding: "0 10px 0 10px" }}>
           <i
             onClick={() => {
               signOut(auth);
