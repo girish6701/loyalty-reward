@@ -40,11 +40,6 @@ function LoginUser() {
     setLoader(false);
   }
 
-  // async function handleSignOut() {
-  //   // await signOut(auth);
-  //   setUser(null);
-  // }
-
   return (
     <div>
       {loader ? (
