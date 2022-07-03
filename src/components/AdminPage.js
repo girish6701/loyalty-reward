@@ -25,32 +25,27 @@ function AdminPage() {
         setLoader(true);
         const docRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(docRef);
-        setLoader(false);
         if (!docSnap.data().isAdmin) {
           navigate("/userPage");
         }
+        setLoader(false);
       }
     })();
   }, [user]);
 
-  function createProgram() {
-    setShowForm(!showForm);
-  }
-
   useEffect(() => {
     (async () => {
+      setLoader(true);
       if (allPrograms) {
-        // localStorage.setItem("programs", JSON.stringify(allPrograms));
         const docRef = await setDoc(doc(db, "all-programs", "programs"), {
           programsArray: [...allPrograms],
         });
       }
+      setLoader(false);
     })();
   }, [allPrograms]);
 
   useEffect(() => {
-    // const data = JSON.parse(localStorage.getItem("programs"));
-    // setAllPrograms(data);
     setLoader(true);
     let pArr = [];
     const unsubscribe = onSnapshot(
@@ -68,6 +63,10 @@ function AdminPage() {
       unsubscribe();
     };
   }, []);
+
+  function createProgram() {
+    setShowForm(!showForm);
+  }
 
   return (
     <div>

@@ -33,6 +33,7 @@ function UserPage() {
         if (docSnap.data().isAdmin) {
           navigate("/adminPage");
         }
+        setLoader(false);
       }
     })();
   }, [user]);

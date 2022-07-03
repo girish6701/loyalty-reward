@@ -33,7 +33,6 @@ function Signup() {
     )
       .then(async (userCredential) => {
         let user = userCredential.user;
-        console.log(user);
         const docRef = await setDoc(doc(db, "users", user.uid), {
           Name: newUserDetails.name,
           Email: newUserDetails.email,

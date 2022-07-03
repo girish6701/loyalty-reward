@@ -33,8 +33,7 @@ function LoyaltyTimeline({ visits }) {
             </p>
           </div>
         );
-      }
-      if (index == length - 1) {
+      } else if (index == length - 1) {
         arr.push(
           <div className="visit-loyalty-cont">
             <p>
@@ -50,8 +49,7 @@ function LoyaltyTimeline({ visits }) {
             </p>
           </div>
         );
-      }
-      if (index == length) {
+      } else if (index == length) {
         arr.push(
           <div className="next-loyalty">
             <p
