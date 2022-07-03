@@ -28,7 +28,6 @@ export function AuthContextProvider({ children }) {
         ) : (
           children
         )}
-        {/* {!initialLoader && children} */}
       </div>
     </AuthContext.Provider>
   );
