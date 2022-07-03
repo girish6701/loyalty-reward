@@ -5,7 +5,6 @@
   border: 2px solid black;
   padding: 20px;
   border-radius: 3px;
-  /* padding: 0 10px; */
 }
 
 .dishes-cont {
@@ -50,4 +49,23 @@
 
 button {
   border-radius: 3px;
+}
+
+.dish-name-form {
+  width: 180px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  cursor: pointer;
+  background-color: skyblue;
+  color: white;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.dish-name-form:hover {
+  background-color: transparent;
+  color: skyblue;
+  border: 1.5px solid skyblue;
 }

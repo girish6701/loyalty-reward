@@ -2,6 +2,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
+  margin: 20px auto;
 }
 
 .visits-cont {
@@ -9,6 +10,8 @@
   column-gap: 20px;
   row-gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .visit-cont {
@@ -57,4 +60,17 @@
   background-color: white;
   color: lightskyblue;
   border: 1.5px solid lightskyblue;
+}
+
+.dish-name {
+  border: 1.5px solid transparent;
+  background-color: skyblue;
+  color: white;
+  transition: 0.3s;
+}
+
+.dish-name:hover {
+  border: 1.5px solid skyblue;
+  background-color: white;
+  color: skyblue;
 }

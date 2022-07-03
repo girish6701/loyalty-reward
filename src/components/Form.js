@@ -34,7 +34,7 @@ function Form({ setShowForm, setAllPrograms, allPrograms }) {
       <div className="dishes-cont">
         {restaurantDishes[0].dishes.map((dish, index) => {
           return (
-            <p key={index} onClick={addDishes} className="dish-name">
+            <p key={index} onClick={addDishes} className="dish-name-form">
               {dish.name}
             </p>
           );

@@ -113,9 +113,10 @@ function UserPage() {
                 );
               })}
           </div>
+          <h2 style={{ marginBottom: "15px" }}>ADD VISIT</h2>
           <input value={date} onChange={handleDateChange} type="date" />
           <div>
-            <h4>Menu</h4>
+            <h3 style={{ marginTop: "10px" }}>Menu</h3>
             <div className="dishes-cont">
               {restaurantDishes[0].dishes.map((dish, index) => {
                 return (
