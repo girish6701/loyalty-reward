@@ -48,6 +48,7 @@ function LoginUser() {
         <div className="login-cont">
           <div className="main-div">
             <div className="main-login-cont">
+              <h2>LOGIN</h2>
               {error && <p className="error-text">{error.message}</p>}
               <input
                 type="email"

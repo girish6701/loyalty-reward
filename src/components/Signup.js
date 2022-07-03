@@ -58,6 +58,7 @@ function Signup() {
       ) : (
         <div className="signup-cont">
           <div className="signup-main-cont">
+          <h2>SIGNUP</h2>
             {error && <p className="error-text">{error.message}</p>}
             <input
               type="email"
