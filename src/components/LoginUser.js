@@ -42,6 +42,7 @@ function LoginUser() {
 
   return (
     <div>
+    <h1>MASTER BRANCH</h1>
       {loader ? (
         <i className="fa-solid fa-spinner fa-spin-pulse fa-spin-reverse"></i>
       ) : (
